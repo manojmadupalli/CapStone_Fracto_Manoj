@@ -53,4 +53,4 @@ Deploy `dist/fracto` folder.
 - Angular Material errors: Import required Material modules.
 
 
-Github Link :- https://github.com/manojmadupalli/CAPSTONE_FRACTO
+Github Link :- https://github.com/manojmadupalli/CapStone_Fracto_Manoj

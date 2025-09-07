@@ -111,7 +111,7 @@ Fracto is an **online doctor appointment booking system** with two main modules:
 
 ## Contributors
 - **Manoj Madupalli** (Developer, Capstone Project)
-Github Link :- https://github.com/manojmadupalli/CAPSTONE_FRACTO
+Github Link :- https://github.com/manojmadupalli/CapStone_Fracto_Manoj
 
 ---
 
