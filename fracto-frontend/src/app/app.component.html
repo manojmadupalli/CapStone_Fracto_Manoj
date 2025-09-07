@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>🩺 Fracto - Doctor Appointment Booking</h1>
+
+  <nav>
+    <a routerLink="/login" *ngIf="!isLoggedIn">Login</a> |
+    <a routerLink="/register" *ngIf="!isLoggedIn">Register</a> |
+
+    <!-- User menu -->
+    <a routerLink="/doctor-search" *ngIf="role==='User'">Search Doctors</a> |
+    <a routerLink="/appointment-book" *ngIf="role==='User'">Book Appointment</a> |
+    <a routerLink="/appointments" *ngIf="isLoggedIn">My Appointments</a> |
+
+    <!-- Admin menu -->
+    <a routerLink="/admin" *ngIf="role==='Admin'">Admin Dashboard</a> |
+
+    <!-- Logout -->
+    <a href="#" (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+  </nav>
+
+  <hr />
+
+  <router-outlet></router-outlet>
+</div>

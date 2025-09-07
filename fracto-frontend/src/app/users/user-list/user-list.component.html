@@ -1,0 +1,30 @@
+<h2>Users</h2>
+
+<p *ngIf="error" style="color:red">{{ error }}</p>
+
+<table border="1" width="100%" *ngIf="users.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>City</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.userId }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.role }}</td>
+      <td>{{ user.city }}</td>
+      <td>
+        <button (click)="deleteUser(user.userId)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="users.length === 0">No users found.</p>

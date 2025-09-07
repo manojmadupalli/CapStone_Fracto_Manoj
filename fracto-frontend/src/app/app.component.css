@@ -1,0 +1,21 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+}
+
+nav a.active {
+  color: #005f99;
+  text-decoration: underline;
+}

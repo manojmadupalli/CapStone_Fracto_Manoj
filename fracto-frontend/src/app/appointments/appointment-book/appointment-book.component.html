@@ -1,0 +1,67 @@
+<!-- <h2>Book Appointment</h2>
+
+<mat-card>
+  <form (ngSubmit)="book()">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Doctor</mat-label>
+      <mat-select [(ngModel)]="appointment.doctorId" name="doctorId" required>
+        <mat-option *ngFor="let d of doctors" [value]="d.doctorId">
+          {{ d.name }} ({{ d.city }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Date</mat-label>
+      <input matInput type="date" [(ngModel)]="appointment.appointmentDate" name="appointmentDate" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Time Slot</mat-label>
+      <input matInput [(ngModel)]="appointment.timeSlot" name="timeSlot" placeholder="e.g. 10:00 AM" required />
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit">Book</button>
+  </form>
+</mat-card> -->
+
+<h2>Book Appointment</h2>
+
+
+<mat-card>
+<form (ngSubmit)="book()">
+
+
+<mat-form-field appearance="outline" class="full-width">
+<mat-label>Doctor</mat-label>
+<mat-select [(ngModel)]="appointment.doctorId" name="doctorId" required (selectionChange)="onDoctorOrDateChange()">
+<mat-option *ngFor="let d of doctors" [value]="d.doctorId">
+{{ d.name }} ({{ d.city }})
+</mat-option>
+</mat-select>
+</mat-form-field>
+
+
+<mat-form-field appearance="outline" class="full-width">
+<mat-label>Date</mat-label>
+<input matInput type="date" [(ngModel)]="appointment.appointmentDate" name="appointmentDate" required (ngModelChange)="onDoctorOrDateChange()" />
+</mat-form-field>
+
+
+<mat-form-field appearance="outline" class="full-width">
+<mat-label>Time Slot</mat-label>
+
+
+<!-- show loading hint while slots are being fetched -->
+<mat-select [(ngModel)]="appointment.timeSlot" name="timeSlot" required [disabled]="loadingSlots || !timeSlots.length">
+<mat-option *ngIf="loadingSlots" disabled>Loading slots...</mat-option>
+<mat-option *ngIf="!loadingSlots && timeSlots.length===0" disabled>Select doctor and date</mat-option>
+<mat-option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</mat-option>
+</mat-select>
+</mat-form-field>
+
+
+<button mat-raised-button color="accent" type="submit">Book</button>
+</form>
+</mat-card>

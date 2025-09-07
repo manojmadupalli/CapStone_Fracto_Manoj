@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background: #f4f6f8;
+}
+
+.container {
+  padding: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.status-approved {
+  color: green;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: red;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+button {
+  margin-right: 10px;
+}
